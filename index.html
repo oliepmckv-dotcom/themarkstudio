@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Mark — Brand Identity Studio</title>
+<meta name="description" content="Premium brand identity kits for solopreneurs, coaches and freelancers. Look like you mean it.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,400&family=Lora:ital@1&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@300&family=Archivo+Black&family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1A1714;--chalk:#E4E6EA;--midnight:#1B4F8A;--ml:#7EB3D9;--dusk:#6B6560;
+  --parchment:#F5F2EC;--border:rgba(0,0,0,0.09);--surface:rgba(255,255,255,0.55);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--chalk);color:var(--ink);overflow-x:hidden}
+
+nav{position:sticky;top:0;z-index:100;background:var(--chalk);border-bottom:0.5px solid var(--border);padding:18px 48px;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{display:flex;flex-direction:column}
+.nav-the{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:14px;letter-spacing:0.18em;color:var(--midnight);line-height:1}
+.nav-mark{font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:0.24em;color:var(--ink);line-height:1;margin-top:-3px}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-link{font-size:12px;font-weight:300;color:var(--dusk);cursor:pointer;transition:color 0.2s;text-decoration:none}
+.nav-link:hover{color:var(--ink)}
+.nav-cta{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:0.12em;background:var(--ink);color:var(--chalk);padding:9px 20px;border-radius:3px;cursor:pointer;transition:background 0.2s;text-decoration:none}
+.nav-cta:hover{background:var(--midnight)}
+
+.section{padding:80px 48px}
+.eyebrow{font-size:10px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--midnight);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.eyebrow::before{content:'';display:inline-block;width:18px;height:0.5px;background:var(--midnight)}
+.section-headline{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:44px;color:var(--ink);line-height:0.95;letter-spacing:-0.01em}
+.cta-primary{font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:0.14em;background:var(--ink);color:var(--chalk);padding:13px 32px;border-radius:3px;cursor:pointer;transition:background 0.2s;border:none;display:inline-block;text-decoration:none}
+.cta-primary:hover{background:var(--midnight)}
+.cta-secondary{font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:0.14em;color:var(--ink);border:0.5px solid rgba(0,0,0,0.2);padding:13px 24px;border-radius:3px;cursor:pointer;transition:all 0.2s;background:transparent;display:inline-block;text-decoration:none}
+.cta-secondary:hover{border-color:var(--midnight);color:var(--midnight)}
+
+/* HERO */
+.hero-body{padding:80px 48px 72px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.hero-eyebrow{font-size:10px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--midnight);margin-bottom:22px;display:flex;align-items:center;gap:10px}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';display:inline-block;width:28px;height:0.5px;background:var(--midnight)}
+.hero-hl1{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:62px;color:var(--dusk);line-height:1;letter-spacing:-0.01em;display:block}
+.hero-hl2{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:62px;color:var(--ink);line-height:1;letter-spacing:-0.01em;display:block;margin-top:4px}
+.hero-sub{font-size:14px;font-weight:300;color:var(--dusk);line-height:1.7;max-width:420px;margin:20px auto 32px}
+.hero-ctas{display:flex;gap:10px;justify-content:center;margin-bottom:44px}
+.kit-pills{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.kit-pill{background:rgba(255,255,255,0.6);border:0.5px solid var(--border);border-radius:6px;padding:8px 12px;display:flex;align-items:center;gap:7px}
+.kp-swatches{display:flex;gap:2px}
+.kp-sw{width:10px;height:10px;border-radius:1px}
+.kp-name{font-family:'Bebas Neue',sans-serif;font-size:10px;letter-spacing:0.1em;color:var(--dusk)}
+
+/* KIT COLLECTION */
+.kc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:12px}
+.kc-card{background:#FAFAF8;border:0.5px solid rgba(0,0,0,0.09);border-radius:12px;overflow:hidden;transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s;box-shadow:0 1px 4px rgba(0,0,0,0.05)}
+.kc-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.09);border-color:rgba(27,79,138,0.25)}
+.kc-swatch-bar{height:48px;display:flex}
+.kc-sw{flex:1}
+.kc-body{padding:14px 16px 16px}
+.kc-tag{font-size:9px;font-weight:500;letter-spacing:0.13em;text-transform:uppercase;color:#9C9690;margin-bottom:4px}
+.kc-name{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.1em;color:var(--ink);line-height:1;margin-bottom:4px}
+.kc-vibe{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:13px;color:var(--dusk);line-height:1.4;margin-bottom:12px}
+.kc-footer{display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:0.5px solid rgba(0,0,0,0.06)}
+.kc-price{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.08em;color:var(--ink)}
+.kc-cta{font-family:'Bebas Neue',sans-serif;font-size:10px;letter-spacing:0.12em;color:var(--chalk);background:var(--ink);padding:6px 14px;border-radius:3px;cursor:pointer;transition:background 0.2s;text-decoration:none;display:inline-block}
+.kc-cta:hover{background:var(--midnight)}
+
+/* VOID CARD */
+.void-card{background:var(--ink);border:0.5px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,0.15)}
+.void-left{padding:24px}
+.void-kit-num{font-size:9px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#9C9690;margin-bottom:8px}
+.void-name{font-family:'DM Sans',sans-serif;font-weight:300;font-size:44px;color:var(--parchment);line-height:0.9;letter-spacing:-0.02em;margin-bottom:8px}
+.void-vibe{font-size:12px;font-weight:300;color:var(--dusk);line-height:1.5;margin-bottom:16px}
+.void-swatches{display:flex;gap:4px;margin-bottom:20px}
+.void-sw{width:24px;height:24px;border-radius:3px;border:0.5px solid rgba(255,255,255,0.1)}
+.void-footer{display:flex;align-items:center;justify-content:space-between}
+.void-price{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.1em;color:var(--parchment)}
+.void-cta{font-family:'Bebas Neue',sans-serif;font-size:10px;letter-spacing:0.12em;color:var(--chalk);border:0.5px solid rgba(255,255,255,0.2);padding:7px 16px;border-radius:3px;cursor:pointer;transition:all 0.2s;text-decoration:none;display:inline-block}
+.void-cta:hover{background:rgba(255,255,255,0.07)}
+.void-right{padding:24px;border-left:0.5px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;gap:8px}
+.void-del{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:300;color:#9C9690}
+.void-del-dot{width:3px;height:3px;border-radius:50%;background:var(--ml);flex-shrink:0}
+
+/* BUNDLE */
+.bundle-bar{background:var(--ink);border-radius:12px;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;box-shadow:0 2px 8px rgba(0,0,0,0.15)}
+.bb-left{}
+.bb-tag{font-size:9px;font-weight:500;letter-spacing:0.13em;text-transform:uppercase;color:var(--ml);margin-bottom:6px}
+.bb-hl{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:22px;color:var(--parchment);line-height:1.2}
+.bb-desc{font-size:11px;font-weight:300;color:#9C9690;margin-top:4px}
+.bb-right{display:flex;align-items:center;gap:16px}
+.bb-prices{text-align:right}
+.bb-price{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:0.1em;color:var(--parchment);line-height:1}
+.bb-was{font-size:11px;font-weight:300;color:var(--dusk);text-decoration:line-through}
+.bb-cta{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:0.12em;color:var(--chalk);border:0.5px solid rgba(255,255,255,0.2);padding:10px 20px;border-radius:3px;cursor:pointer;transition:all 0.2s;white-space:nowrap;text-decoration:none;display:inline-block}
+.bb-cta:hover{background:rgba(255,255,255,0.07)}
+
+/* WHAT'S INSIDE */
+.inside-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:32px}
+.inside-card{background:rgba(255,255,255,0.55);border:0.5px solid var(--border);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.inside-num{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:0.1em;color:var(--midnight)}
+.inside-title{font-size:12px;font-weight:500;color:var(--ink);line-height:1.3}
+.inside-desc{font-size:11px;font-weight:300;color:var(--dusk);line-height:1.5}
+
+/* COMING SOON */
+.cs-section{background:var(--ink);padding:80px 48px}
+.cs-eyebrow{font-size:10px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--ml);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.cs-eyebrow::before{content:'';display:inline-block;width:18px;height:0.5px;background:var(--ml)}
+.cs-hl{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:44px;color:var(--parchment);line-height:0.95;letter-spacing:-0.01em;margin-bottom:16px}
+.cs-sub{font-size:14px;font-weight:300;color:var(--dusk);line-height:1.7;max-width:480px;margin-bottom:40px}
+.cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.cs-card{border:0.5px solid rgba(255,255,255,0.07);border-radius:12px;padding:24px;position:relative;overflow:hidden}
+.cs-pill{display:inline-block;font-size:8px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;background:rgba(126,179,217,0.1);color:var(--ml);border:0.5px solid rgba(126,179,217,0.2);padding:3px 10px;border-radius:20px;margin-bottom:14px}
+.cs-name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.1em;color:var(--parchment);margin-bottom:6px}
+.cs-desc{font-size:12px;font-weight:300;color:var(--dusk);line-height:1.6;margin-bottom:14px}
+.cs-items{display:flex;flex-direction:column;gap:4px}
+.cs-item{font-size:11px;font-weight:300;color:#9C9690;display:flex;align-items:center;gap:6px}
+.cs-item-dot{width:3px;height:3px;border-radius:50%;background:var(--ml);flex-shrink:0}
+
+/* PROCESS */
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:32px}
+.process-card{background:rgba(255,255,255,0.55);border:0.5px solid var(--border);border-radius:10px;padding:20px}
+.process-num{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:0.06em;color:rgba(27,79,138,0.15);line-height:1;margin-bottom:8px}
+.process-title{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:6px}
+.process-desc{font-size:11px;font-weight:300;color:var(--dusk);line-height:1.6}
+
+/* FOOTER */
+footer{background:var(--ink);padding:48px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;border-top:0.5px solid rgba(255,255,255,0.06)}
+.footer-brand{}
+.footer-the{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:12px;letter-spacing:0.18em;color:var(--ml);line-height:1}
+.footer-mark{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:0.24em;color:var(--parchment);line-height:1;margin-top:-2px;margin-bottom:10px}
+.footer-desc{font-size:12px;font-weight:300;color:var(--dusk);line-height:1.7;max-width:220px}
+.footer-col-label{font-size:9px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--ml);margin-bottom:14px}
+.footer-link{font-size:12px;font-weight:300;color:var(--dusk);display:block;margin-bottom:8px;text-decoration:none;transition:color 0.2s}
+.footer-link:hover{color:var(--parchment)}
+.footer-bottom{background:var(--ink);padding:20px 48px;border-top:0.5px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:11px;font-weight:300;color:#9C9690}
+.footer-email{font-size:11px;font-weight:300;color:var(--dusk);text-decoration:none;transition:color 0.2s}
+.footer-email:hover{color:var(--parchment)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <span class="nav-the">the</span>
+    <span class="nav-mark">MARK</span>
+  </div>
+  <div class="nav-links">
+    <a href="#kits" class="nav-link">Kits</a>
+    <a href="#inside" class="nav-link">What's inside</a>
+    <a href="#coming-soon" class="nav-link">Coming soon</a>
+    <a href="https://themarkstudio.gumroad.com" class="nav-cta" target="_blank">Shop all kits</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero-body">
+  <div class="hero-eyebrow">Brand Identity Studio</div>
+  <span class="hero-hl1">Built for businesses</span>
+  <span class="hero-hl2">that mean it.</span>
+  <p class="hero-sub">Premium brand identity kits for solopreneurs, coaches and freelancers. Pick your aesthetic, set up in an afternoon, look like you mean it.</p>
+  <div class="hero-ctas">
+    <a href="#kits" class="cta-primary">Browse the kits</a>
+    <a href="https://themarkstudio.gumroad.com/l/the-mark-complete-collection" class="cta-secondary" target="_blank">Get the full collection</a>
+  </div>
+  <div class="kit-pills">
+    <div class="kit-pill"><div class="kp-swatches"><div class="kp-sw" style="background:#1A1714"></div><div class="kp-sw" style="background:#D4C5A9"></div><div class="kp-sw" style="background:#F4F2EE"></div></div><span class="kp-name">Void</span></div>
+    <div class="kit-pill"><div class="kp-swatches"><div class="kp-sw" style="background:#0D1220"></div><div class="kp-sw" style="background:#8B7355"></div><div class="kp-sw" style="background:#EDE8DF"></div></div><span class="kp-name">Cipher</span></div>
+    <div class="kit-pill"><div class="kp-swatches"><div class="kp-sw" style="background:#1E0E2A"></div><div class="kp-sw" style="background:#B89AC4"></div><div class="kp-sw" style="background:#F5F2FC"></div></div><span class="kp-name">Folio</span></div>
+    <div class="kit-pill"><div class="kp-swatches"><div class="kp-sw" style="background:#2A1410"></div><div class="kp-sw" style="background:#C4903A"></div><div class="kp-sw" style="background:#F5EEE4"></div></div><span class="kp-name">Ember</span></div>
+    <div class="kit-pill"><div class="kp-swatches"><div class="kp-sw" style="background:#0A0F1E"></div><div class="kp-sw" style="background:#1B6FD4"></div><div class="kp-sw" style="background:#EEF4FA"></div></div><span class="kp-name">Axiom</span></div>
+    <div class="kit-pill"><div class="kp-swatches"><div class="kp-sw" style="background:#142210"></div><div class="kp-sw" style="background:#C4900A"></div><div class="kp-sw" style="background:#F5F0E0"></div></div><span class="kp-name">Terrain</span></div>
+    <div class="kit-pill"><div class="kp-swatches"><div class="kp-sw" style="background:#2A1818"></div><div class="kp-sw" style="background:#E8A090"></div><div class="kp-sw" style="background:#FAF6F4"></div></div><span class="kp-name">Prologue</span></div>
+  </div>
+</div>
+
+<!-- KIT COLLECTION -->
+<div class="section" id="kits" style="padding-top:0">
+  <div class="eyebrow">The collection</div>
+  <div class="section-headline" style="margin-bottom:32px">Seven identities.<br>One studio.</div>
+
+  <!-- Void standalone dark card -->
+  <div class="void-card">
+    <div class="void-left">
+      <div class="void-kit-num">Kit 00 — The Foundation</div>
+      <div class="void-name">Void</div>
+      <div class="void-vibe">The brand that gets out of the way. No colour, no decoration — just structure, space and intention.</div>
+      <div class="void-swatches">
+        <div class="void-sw" style="background:#0A0A0A"></div>
+        <div class="void-sw" style="background:#1A1714"></div>
+        <div class="void-sw" style="background:#D4C5A9"></div>
+        <div class="void-sw" style="background:#F4F2EE"></div>
+        <div class="void-sw" style="background:#FFFFFF;border:0.5px solid rgba(255,255,255,0.3)"></div>
+      </div>
+      <div class="void-footer">
+        <span class="void-price">£39</span>
+        <a href="https://themarkstudio.gumroad.com/l/void-brand-identity-kit" class="void-cta" target="_blank">Get the kit</a>
+      </div>
+    </div>
+    <div class="void-right">
+      <div style="font-size:9px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--ml);margin-bottom:8px">What's included</div>
+      <div class="void-del"><div class="void-del-dot"></div>Brand Reference Card</div>
+      <div class="void-del"><div class="void-del-dot"></div>Full Brand Document</div>
+      <div class="void-del"><div class="void-del-dot"></div>12 Logo Mark PNGs</div>
+      <div class="void-del"><div class="void-del-dot"></div>26 Canva Templates</div>
+      <div class="void-del"><div class="void-del-dot"></div>Kit Integration Guide</div>
+      <div style="margin-top:12px;padding-top:12px;border-top:0.5px solid rgba(255,255,255,0.06)">
+        <div style="font-size:9px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--ml);margin-bottom:6px">Fonts</div>
+        <div style="font-size:11px;font-weight:300;color:#9C9690">DM Sans Light + Medium</div>
+        <div style="font-size:10px;font-weight:300;color:#6B6560;margin-top:2px">Free on Google Fonts</div>
+      </div>
+      <div style="margin-top:12px;padding-top:12px;border-top:0.5px solid rgba(255,255,255,0.06)">
+        <div style="font-size:9px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--ml);margin-bottom:6px">Best for</div>
+        <div style="font-size:11px;font-weight:300;color:#9C9690">Any industry · Any niche · Pure minimalism</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6 kit grid -->
+  <div class="kc-grid">
+    <!-- Cipher -->
+    <div class="kc-card">
+      <div class="kc-swatch-bar">
+        <div class="kc-sw" style="background:#0D1220"></div>
+        <div class="kc-sw" style="background:#1A2440"></div>
+        <div class="kc-sw" style="background:#8B7355"></div>
+        <div class="kc-sw" style="background:#C4B49A"></div>
+        <div class="kc-sw" style="background:#EDE8DF"></div>
+      </div>
+      <div class="kc-body">
+        <div class="kc-tag">Kit 01 — Midnight & Parchment</div>
+        <div class="kc-name">Cipher</div>
+        <div class="kc-vibe">Authority without arrogance.</div>
+        <div class="kc-footer">
+          <span class="kc-price">£79</span>
+          <a href="https://themarkstudio.gumroad.com/l/cipher-brand-identity-kit" class="kc-cta" target="_blank">Get the kit</a>
+        </div>
+      </div>
+    </div>
+    <!-- Folio -->
+    <div class="kc-card">
+      <div class="kc-swatch-bar">
+        <div class="kc-sw" style="background:#1E0E2A"></div>
+        <div class="kc-sw" style="background:#3D2050"></div>
+        <div class="kc-sw" style="background:#B89AC4"></div>
+        <div class="kc-sw" style="background:#E8E0F0"></div>
+        <div class="kc-sw" style="background:#F5F2FC"></div>
+      </div>
+      <div class="kc-body">
+        <div class="kc-tag">Kit 02 — Paper & Plum</div>
+        <div class="kc-name">Folio</div>
+        <div class="kc-vibe">Editorial without being precious.</div>
+        <div class="kc-footer">
+          <span class="kc-price">£79</span>
+          <a href="https://themarkstudio.gumroad.com/l/folio-brand-identity-kit" class="kc-cta" target="_blank">Get the kit</a>
+        </div>
+      </div>
+    </div>
+    <!-- Ember -->
+    <div class="kc-card">
+      <div class="kc-swatch-bar">
+        <div class="kc-sw" style="background:#2A1410"></div>
+        <div class="kc-sw" style="background:#8B3A1C"></div>
+        <div class="kc-sw" style="background:#C4903A"></div>
+        <div class="kc-sw" style="background:#E8D8C0"></div>
+        <div class="kc-sw" style="background:#F5EEE4"></div>
+      </div>
+      <div class="kc-body">
+        <div class="kc-tag">Kit 03 — Rust & Linen</div>
+        <div class="kc-name">Ember</div>
+        <div class="kc-vibe">Warm without being soft.</div>
+        <div class="kc-footer">
+          <span class="kc-price">£79</span>
+          <a href="https://themarkstudio.gumroad.com/l/ember-brand-identity-kit" class="kc-cta" target="_blank">Get the kit</a>
+        </div>
+      </div>
+    </div>
+    <!-- Axiom -->
+    <div class="kc-card">
+      <div class="kc-swatch-bar">
+        <div class="kc-sw" style="background:#0A0F1E"></div>
+        <div class="kc-sw" style="background:#0F1F45"></div>
+        <div class="kc-sw" style="background:#1B6FD4"></div>
+        <div class="kc-sw" style="background:#7EB3D9"></div>
+        <div class="kc-sw" style="background:#EEF4FA"></div>
+      </div>
+      <div class="kc-body">
+        <div class="kc-tag">Kit 04 — Navy & Ice</div>
+        <div class="kc-name">Axiom</div>
+        <div class="kc-vibe">Precise, systematic, built for builders.</div>
+        <div class="kc-footer">
+          <span class="kc-price">£79</span>
+          <a href="https://themarkstudio.gumroad.com/l/axiom-brand-identity-kit" class="kc-cta" target="_blank">Get the kit</a>
+        </div>
+      </div>
+    </div>
+    <!-- Terrain -->
+    <div class="kc-card">
+      <div class="kc-swatch-bar">
+        <div class="kc-sw" style="background:#142210"></div>
+        <div class="kc-sw" style="background:#2A4A1E"></div>
+        <div class="kc-sw" style="background:#C4900A"></div>
+        <div class="kc-sw" style="background:#E8D8B0"></div>
+        <div class="kc-sw" style="background:#F5F0E0"></div>
+      </div>
+      <div class="kc-body">
+        <div class="kc-tag">Kit 05 — Forest & Ochre</div>
+        <div class="kc-name">Terrain</div>
+        <div class="kc-vibe">Grounded, expert, built from experience.</div>
+        <div class="kc-footer">
+          <span class="kc-price">£79</span>
+          <a href="https://themarkstudio.gumroad.com/l/terrain-brand-identity-kit" class="kc-cta" target="_blank">Get the kit</a>
+        </div>
+      </div>
+    </div>
+    <!-- Prologue -->
+    <div class="kc-card">
+      <div class="kc-swatch-bar">
+        <div class="kc-sw" style="background:#2A1818"></div>
+        <div class="kc-sw" style="background:#C45A4A"></div>
+        <div class="kc-sw" style="background:#E8A090"></div>
+        <div class="kc-sw" style="background:#F2E4E0"></div>
+        <div class="kc-sw" style="background:#FAF6F4"></div>
+      </div>
+      <div class="kc-body">
+        <div class="kc-tag">Kit 06 — Dusk & Coral</div>
+        <div class="kc-name">Prologue</div>
+        <div class="kc-vibe">Warm, hopeful, built for what comes next.</div>
+        <div class="kc-footer">
+          <span class="kc-price">£79</span>
+          <a href="https://themarkstudio.gumroad.com/l/prologue-brand-identity-kit" class="kc-cta" target="_blank">Get the kit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bundle bar -->
+  <div class="bundle-bar">
+    <div class="bb-left">
+      <div class="bb-tag">Best value</div>
+      <div class="bb-hl">The Complete Collection — all 7 kits</div>
+      <div class="bb-desc">182 Canva templates · 84 logo mark PNGs · 7 complete brand systems</div>
+    </div>
+    <div class="bb-right">
+      <div class="bb-prices">
+        <div class="bb-was">Total value £553</div>
+        <div class="bb-price">£299</div>
+      </div>
+      <a href="https://themarkstudio.gumroad.com/l/the-mark-complete-collection" class="bb-cta" target="_blank">Get the collection</a>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT'S INSIDE -->
+<div class="section" id="inside" style="background:var(--parchment)">
+  <div class="eyebrow">Every kit includes</div>
+  <div class="section-headline">Five deliverables.<br>Ready in one afternoon.</div>
+  <div class="inside-grid">
+    <div class="inside-card">
+      <div class="inside-num">01</div>
+      <div class="inside-title">Brand Reference Card</div>
+      <div class="inside-desc">One-page quick reference. Colours, fonts, logo usage. Pin it up or share with collaborators.</div>
+    </div>
+    <div class="inside-card">
+      <div class="inside-num">02</div>
+      <div class="inside-title">Brand Document</div>
+      <div class="inside-desc">Full system — colour guide, font guide, moodboard and brand style guide. The complete reference.</div>
+    </div>
+    <div class="inside-card">
+      <div class="inside-num">03</div>
+      <div class="inside-title">12 Logo Mark PNGs</div>
+      <div class="inside-desc">Wordmark, submark and icon. Four colour versions each. Transparent backgrounds, ready to use.</div>
+    </div>
+    <div class="inside-card">
+      <div class="inside-num">04</div>
+      <div class="inside-title">26 Canva Templates</div>
+      <div class="inside-desc">Instagram posts, stories, LinkedIn banner, email header and lead magnet cover. All in one document.</div>
+    </div>
+    <div class="inside-card">
+      <div class="inside-num">05</div>
+      <div class="inside-title">Integration Guide</div>
+      <div class="inside-desc">Step-by-step setup walkthrough. Where to use each mark, how to apply your fonts, what to share with collaborators.</div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="section">
+  <div class="eyebrow">How it works</div>
+  <div class="section-headline">Pick. Download.<br>Look the part.</div>
+  <div class="process-grid">
+    <div class="process-card">
+      <div class="process-num">01</div>
+      <div class="process-title">Choose your kit</div>
+      <div class="process-desc">Pick the aesthetic that fits your brand. Each kit has a distinct personality — minimal, editorial, warm, authoritative, technical, grounded or fresh.</div>
+    </div>
+    <div class="process-card">
+      <div class="process-num">02</div>
+      <div class="process-title">Download instantly</div>
+      <div class="process-desc">Purchase on Gumroad and your download is ready immediately. Everything is inside the ZIP — no waiting, no onboarding calls.</div>
+    </div>
+    <div class="process-card">
+      <div class="process-num">03</div>
+      <div class="process-title">Follow the guide</div>
+      <div class="process-desc">Open the Integration Guide first. It walks you through installing fonts, adding colours to Canva, uploading logos and using each template.</div>
+    </div>
+    <div class="process-card">
+      <div class="process-num">04</div>
+      <div class="process-title">Look like you mean it</div>
+      <div class="process-desc">A consistent, professional brand identity running across every platform. Done in an afternoon. No designer required.</div>
+    </div>
+  </div>
+</div>
+
+<!-- COMING SOON -->
+<div class="cs-section" id="coming-soon">
+  <div class="cs-eyebrow">Coming soon</div>
+  <div class="cs-hl">More products.<br>Same standard.</div>
+  <div class="cs-sub">The Mark is building out a full suite of digital products for solopreneurs and freelancers. Brand kits are just the beginning.</div>
+  <div class="cs-grid">
+    <div class="cs-card">
+      <div class="cs-pill">In development</div>
+      <div class="cs-name">AI Prompt Packs</div>
+      <div class="cs-desc">50+ expert-level prompts built for your specific profession. Copy, paste, done — no more wasted time writing bad prompts and getting generic results.</div>
+      <div class="cs-items">
+        <div class="cs-item"><div class="cs-item-dot"></div>Estate agents — listings, follow-ups, social</div>
+        <div class="cs-item"><div class="cs-item-dot"></div>Recruiters — job specs, outreach, summaries</div>
+        <div class="cs-item"><div class="cs-item-dot"></div>Personal trainers — plans, check-ins, content</div>
+      </div>
+    </div>
+    <div class="cs-card">
+      <div class="cs-pill">Planned</div>
+      <div class="cs-name">Notion Business Systems</div>
+      <div class="cs-desc">Ready-built Notion workspaces for running your business. Client management, project tracking, content planning — all set up and waiting.</div>
+      <div class="cs-items">
+        <div class="cs-item"><div class="cs-item-dot"></div>Client & project management</div>
+        <div class="cs-item"><div class="cs-item-dot"></div>Content calendar & planning</div>
+        <div class="cs-item"><div class="cs-item-dot"></div>Finance & invoice tracking</div>
+      </div>
+    </div>
+    <div class="cs-card">
+      <div class="cs-pill">Planned</div>
+      <div class="cs-name">Micro Courses</div>
+      <div class="cs-desc">Short, focused courses on brand, marketing and business fundamentals. No fluff, no padding — just what you need to know to move faster.</div>
+      <div class="cs-items">
+        <div class="cs-item"><div class="cs-item-dot"></div>Brand fundamentals for non-designers</div>
+        <div class="cs-item"><div class="cs-item-dot"></div>Social media content that converts</div>
+        <div class="cs-item"><div class="cs-item-dot"></div>Pricing your services with confidence</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <div class="footer-the">the</div>
+    <div class="footer-mark">MARK</div>
+    <div class="footer-desc">Premium brand identity kits for solopreneurs, coaches and freelancers. Built for businesses that mean it.</div>
+  </div>
+  <div>
+    <div class="footer-col-label">Kits</div>
+    <a href="https://themarkstudio.gumroad.com/l/void-brand-identity-kit" class="footer-link" target="_blank">Void — £39</a>
+    <a href="https://themarkstudio.gumroad.com/l/cipher-brand-identity-kit" class="footer-link" target="_blank">Cipher — £79</a>
+    <a href="https://themarkstudio.gumroad.com/l/folio-brand-identity-kit" class="footer-link" target="_blank">Folio — £79</a>
+    <a href="https://themarkstudio.gumroad.com/l/ember-brand-identity-kit" class="footer-link" target="_blank">Ember — £79</a>
+    <a href="https://themarkstudio.gumroad.com/l/axiom-brand-identity-kit" class="footer-link" target="_blank">Axiom — £79</a>
+    <a href="https://themarkstudio.gumroad.com/l/terrain-brand-identity-kit" class="footer-link" target="_blank">Terrain — £79</a>
+    <a href="https://themarkstudio.gumroad.com/l/prologue-brand-identity-kit" class="footer-link" target="_blank">Prologue — £79</a>
+    <a href="https://themarkstudio.gumroad.com/l/the-mark-complete-collection" class="footer-link" target="_blank">Complete Collection — £299</a>
+  </div>
+  <div>
+    <div class="footer-col-label">Studio</div>
+    <a href="#inside" class="footer-link">What's inside</a>
+    <a href="#coming-soon" class="footer-link">Coming soon</a>
+    <a href="https://themarkstudio.gumroad.com" class="footer-link" target="_blank">Shop on Gumroad</a>
+    <a href="mailto:hello@themarkstudio.co.uk" class="footer-link">hello@themarkstudio.co.uk</a>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span class="footer-copy">© 2025 The Mark Studio · All sales final · Digital products</span>
+  <a href="mailto:hello@themarkstudio.co.uk" class="footer-email">hello@themarkstudio.co.uk</a>
+</div>
+
+</body>
+</html>
